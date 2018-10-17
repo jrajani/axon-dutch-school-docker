@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Oct 02 23:28:37 CEST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-0166-36ae-cbeb-000013772698 
+on database directory memory:/Users/jay/Documents/workshop/axon-dutch-school/ds-query/testdb with class loader java.net.URLClassLoader@2cbcd5f4 
+Loaded from file:/Users/jay/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_181-b13
+user.dir=/Users/jay/Documents/workshop/axon-dutch-school/ds-query
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.13.6
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

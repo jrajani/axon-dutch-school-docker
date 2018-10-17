@@ -1,0 +1,9 @@
+io/blueharvest/labs/axon/common/event/AddCourseEvent.class
+io/blueharvest/labs/axon/common/query/CountCoursesResponse.class
+io/blueharvest/labs/axon/common/query/FindCoursesResponse.class
+io/blueharvest/labs/axon/common/query/CountCoursesQuery.class
+io/blueharvest/labs/axon/common/query/FindCoursesQuery.class
+io/blueharvest/labs/axon/common/command/AddCourseCommand.class
+io/blueharvest/labs/axon/common/model/CourseSummary.class
+io/blueharvest/labs/axon/common/event/StudentRegisteredEvent.class
+io/blueharvest/labs/axon/common/command/RegisterStudentCommand.class

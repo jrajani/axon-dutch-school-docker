@@ -1,0 +1,9 @@
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/query/CountCoursesResponse.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/query/FindCoursesResponse.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/command/AddCourseCommand.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/model/CourseSummary.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/command/RegisterStudentCommand.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/query/CountCoursesQuery.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/query/FindCoursesQuery.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/event/AddCourseEvent.java
+/Users/jay/Documents/workshop/axon-dutch-school/ds-common/src/main/java/io/blueharvest/labs/axon/common/event/StudentRegisteredEvent.java
