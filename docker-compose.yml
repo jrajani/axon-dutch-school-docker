@@ -16,25 +16,6 @@ services:
     networks:
       - school-net
 
-
-  axon-hub:
-    container_name: axon-hub
-    build:
-      context: ./axonhub
-      dockerfile: Dockerfile
-    image: axonhub:1.1
-    expose:
-      - 8024
-      - 8124
-    ports:
-      - 28024:8024
-      - 28124:8124
-    networks:
-      - school-net
-    depends_on:
-      - axon-db
-
-
   database:
     container_name: database
     image: mysql:8
@@ -54,6 +35,23 @@ services:
       timeout: 20s
       retries: 10
 
+  axon-hub:
+    container_name: axon-hub
+    build:
+      context: ./axonhub
+      dockerfile: Dockerfile
+    image: axonhub:1.1
+    expose:
+      - 8024
+      - 8124
+    ports:
+      - 28024:8024
+      - 28124:8124
+    networks:
+      - school-net
+    depends_on:
+      - axon-db
+
 
   ds-query:
     container_name: ds-query
@@ -63,6 +61,8 @@ services:
     image: ds-query:latest
     networks:
       - school-net
+    environment:
+      SPRING_APPLICATION_NAME: ds-query
     depends_on:
       database:
         condition: service_healthy
@@ -75,6 +75,8 @@ services:
     image: ds-command:latest
     networks:
       - school-net
+    environment:
+      SPRING_APPLICATION_NAME: ds-command1
     depends_on:
       database:
         condition: service_healthy
