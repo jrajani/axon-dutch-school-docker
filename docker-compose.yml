@@ -76,7 +76,7 @@ services:
     networks:
       - school-net
     environment:
-      SPRING_APPLICATION_NAME: ds-command1
+      SPRING_APPLICATION_NAME: ds-command
     depends_on:
       database:
         condition: service_healthy
@@ -92,6 +92,8 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: ds-gui
     expose:
       - 8080
     ports:
