@@ -1,0 +1,99 @@
+version: '2.2'
+services:
+
+  axon-db:
+    container_name: axon-db
+    build:
+      context: ./axondb
+      dockerfile: Dockerfile
+    image: axondb:1.3.5
+    expose:
+      - 8023
+      - 8123
+    ports:
+      - 18023:8023
+      - 18123:8123
+    networks:
+      - school-net
+
+
+  axon-hub:
+    container_name: axon-hub
+    build:
+      context: ./axonhub
+      dockerfile: Dockerfile
+    image: axonhub:1.1
+    expose:
+      - 8024
+      - 8124
+    ports:
+      - 28024:8024
+      - 28124:8124
+    networks:
+      - school-net
+    depends_on:
+      - axon-db
+
+
+  database:
+    container_name: database
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: dutch-school
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: supersecret
+    ports:
+      - 13306:3306
+    networks:
+      - school-net
+    depends_on:
+      - axon-hub
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+
+  ds-query:
+    container_name: ds-query
+    build:
+      context: ./ds-query
+      dockerfile: Dockerfile
+    image: ds-query:latest
+    networks:
+      - school-net
+    depends_on:
+      database:
+        condition: service_healthy
+
+  ds-command:
+    container_name: ds-command
+    build:
+      context: ./ds-command
+      dockerfile: Dockerfile
+    image: ds-command:latest
+    networks:
+      - school-net
+    depends_on:
+      database:
+        condition: service_healthy
+
+  ds-gui:
+    container_name: ds-gui
+    build:
+      context: ./ds-gui
+      dockerfile: Dockerfile
+    image: ds-gui:latest
+    networks:
+      - school-net
+    depends_on:
+      database:
+        condition: service_healthy
+    expose:
+      - 8080
+    ports:
+      - 38080:8080
+
+networks:
+  school-net:
